@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_projects/books_app/book_app.dart';
 import 'package:flutter_projects/find_out/find_out_app.dart';
 import 'package:flutter_projects/instagram_redesign/instagram_app.dart';
 import 'package:flutter_projects/movie_selection/movie_selection_app.dart';
-import 'package:flutter_projects/music_app/music_app.dart';
-import 'package:flutter_projects/music_app_two/music_app_two.dart';
+import 'package:flutter_projects/music_album_collection/music_album_collection.dart';
+import 'package:flutter_projects/music_vinyl_player/music_vinyl_player.dart';
 import 'package:flutter_projects/orix_gaming/orix_gaming_app.dart';
 import 'package:flutter_projects/photographers_app/photographers_app.dart';
 import 'package:flutter_projects/superheroes/superheroes_app.dart';
@@ -37,13 +38,14 @@ class MyApp extends StatelessWidget {
         "/": (context) => MainPage(),
         _ProjectModel.findOut.route: (context) => FindOutApp(),
         _ProjectModel.movieSelection.route: (context) => MovieSelectionApp(),
-        _ProjectModel.musicApp.route: (context) => MusicApp(),
-        _ProjectModel.musicAppTwo.route: (context) => MusicAppTwo(),
+        _ProjectModel.musicApp.route: (context) => MusicAlbumList(),
+        _ProjectModel.musicAppTwo.route: (context) => MusicVinylPlayer(),
         _ProjectModel.medicalAppointment.route: (context) => MedicalApp(),
         _ProjectModel.photographersApp.route: (context) => PhotographersApp(),
         _ProjectModel.instagram.route: (context) => InstagramApp(),
         _ProjectModel.superheroes.route: (context) => SuperheroesApp(),
         _ProjectModel.orixGaming.route: (context) => OrixGamingApp(),
+        _ProjectModel.bookApp.route: (context) => BookApp(),
       },
     );
   }
@@ -264,7 +266,15 @@ class _ProjectModel {
       pathImage: 'assets/img/orix_gaming.jpg',
       route: 'gaming');
 
+  static const bookApp = _ProjectModel(
+      title: 'Custom Book List',
+      description: 'Flutter UI + Animations',
+      designer: 'Sam',
+      pathImage: 'assets/img/book_app.gif',
+      route: 'book');
+
   static const listProjects = [
+    bookApp,
     orixGaming,
     superheroes,
     instagram,
