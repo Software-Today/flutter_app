@@ -17,12 +17,12 @@ class SuperheroesApp extends StatelessWidget {
         // App Bar Theme
         //-------------------
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.white,
-          iconTheme: const IconThemeData(color: Colors.black),
-          titleTextStyle: GoogleFonts.spartan(
-            fontSize: 22,
-            fontWeight: FontWeight.w600,
-            color: Colors.black,
+          textTheme: TextTheme(
+            headline6: GoogleFonts.spartan(
+              fontSize: 22,
+              fontWeight: FontWeight.w600,
+              color: Colors.black,
+            ),
           ),
         ),
         //-------------------
