@@ -1,32 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class DropDownWidget extends StatelessWidget {
   const DropDownWidget({
-    Key? key,
-    required this.labels,
+    Key? key, this.labels,
   }) : super(key: key);
-  final List<String> labels;
+  final List<String>? labels;
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButton<String>(
+    return DropdownButton(
+      onChanged: (dynamic value) {},
       elevation: 0,
-      onChanged: (value) {},
-      icon: const Icon(Icons.keyboard_arrow_down, color: Colors.white),
-      style: GoogleFonts.poppins(
+      style: const TextStyle(
         color: Colors.white,
+        fontFamily: 'Poppins',
         fontSize: 18,
         fontWeight: FontWeight.w500,
       ),
       iconSize: 28,
-      dropdownColor: Colors.black26,
+      icon: const Icon(Icons.keyboard_arrow_down, color: Colors.white),
+      dropdownColor: Colors.black12,
       underline: const SizedBox(),
-      value: labels.first,
-      items: List.generate(labels.length, (index) {
-        return DropdownMenuItem<String>(
-          value: labels[index],
-          child: Text(labels[index]),
+      items: List.generate(labels!.length, (index) {
+        return DropdownMenuItem(
+          child: Text(labels![index]),
         );
       }),
     );

@@ -24,7 +24,6 @@ class _PageViewPlacesState extends State<PageViewPlaces> {
 
   @override
   void initState() {
-    pageValueNotifier = ValueNotifier<double>(0);
     widget.pageController.addListener(() {
       pageValueNotifier.value = widget.pageController.page!;
     });
@@ -58,9 +57,9 @@ class _PageViewPlacesState extends State<PageViewPlaces> {
         return GestureDetector(
           onVerticalDragUpdate: (details) =>
               _onDragVerticalUpdate(details, context, place),
-          child: ValueListenableBuilder<double>(
+          child: ValueListenableBuilder(
             valueListenable: pageValueNotifier,
-            builder: (context, value, child) {
+            builder: (context, dynamic value, child) {
               final percent = index - value;
               return Transform(
                 transform: Matrix4.identity()
@@ -87,11 +86,11 @@ class _PageViewPlacesState extends State<PageViewPlaces> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      const Spacer(flex: 4),
+                      const Spacer(flex: 3),
                       Center(child: TitlePlace(place: place)),
                       const Spacer(flex: 2),
                       Text(
