@@ -107,7 +107,7 @@ class _ContactListPageState extends State<ContactListPage> {
                       Expanded(
                         child: Slider(
                           value: _visibleItems!.toDouble(),
-                          min: 1,
+                          min: 2,
                           max: 15,
                           divisions: 15,
                           label: '$_visibleItems',

@@ -96,7 +96,7 @@ class ProjectModel {
   static const travelApp = ProjectModel(
     title: 'Travel app',
     description: 'Sliver Animations',
-    designer: 'Pasha Zarutsky',
+    designer: 'mobilepatterns',
     pathImage: 'assets/img/projects/travel.gif',
     route: 'travel',
   );
