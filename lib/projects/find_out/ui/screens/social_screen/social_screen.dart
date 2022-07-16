@@ -124,7 +124,6 @@ class TouristPhotosView extends StatelessWidget {
 
 class _CommentsStaggeredView extends StatelessWidget {
   const _CommentsStaggeredView({
-    super.key,
     required this.listComments,
   });
 
